@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BuzzService } from '../buzz.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Clipboard } from '@angular/cdk/clipboard'; // Ensure this import is correct
+
 
 @Component({
   selector: 'app-room',
@@ -13,11 +15,14 @@ export class RoomComponent implements OnInit {
   userName = '';
   roomId: string | null = null;
   notifications: string[] = [];
+  audioPath =
+  'https://notificationsounds.com/storage/sounds/file-sounds-881-look-this-is-what-i-was-talking-about.mp3';
 
   constructor(
     private buzzService: BuzzService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+   private clipboard: Clipboard
   ) {}
 
   ngOnInit() {
@@ -49,11 +54,31 @@ export class RoomComponent implements OnInit {
 
   pressBuzzer() {
     this.buzzService.pressBuzzer();
+    const audio = new Audio(this.audioPath);
+     audio.play();
+     audio.loop = true; 
+     setTimeout(() => {
+          audio.pause();
+          audio.currentTime = 0;
+        }, 3000);
+      
+   
+    
   }
+
 
   setName() {
     if (this.userName.trim()) {
       this.buzzService.setName(this.userName);
+    }
+  }
+
+  copyRoomId() {
+    if (this.roomId) {
+      this.clipboard.copy(this.roomId);
+      alert('Room ID copied to clipboard!');
+    } else {
+      alert('Room ID is not available.');
     }
   }
 
