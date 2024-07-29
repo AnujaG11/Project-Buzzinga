@@ -1,102 +1,73 @@
-body {
-    background-color: #0d0a38; /* Dark Purple Background */
-    color: #fff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
+.container{
+    border: 0.1rem solid black;
     display: flex;
-    height: 100vh;
-}
-
-.sidebar {
-    background-color: #2e2e2e; /* Dark Grey Background */
-    color: #fff;
-    padding: 20px;
-    width: 20%;
-}
-
-.sidebar.left {
-    border-right: 2px solid #444;
-}
-
-.sidebar.right {
-    border-left: 2px solid #444;
-}
-
-.sidebar h3 {
-    margin-top: 0;
-}
-
-.user-icon {
-    width: 44px; /* Adjust icon size */
-    height: 44px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.user-name {
-    color: #ffcc00; /* Default username color */
-    /* Add random color functionality with JavaScript if needed */
-    font-size: 30px;
-}
-
-/* Main Area Styles */
-.main {
-    flex: 1;
-    padding: 20px;
+    justify-content: center;
     text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    width: 40%;
+    padding: 2%  0%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.main h2 {
-    color: #fff;
-    margin-bottom: 20px;
+ 
+.header{
+    padding: 1% 1%;
 }
 
-.buzzer-container {
-    position: relative;
-    display: inline-block;
+.header img{
+     width: 50%;
+     height: auto;
 }
 
-.buzzer {
-    width: 400px; 
-    cursor: grab;
-    transition: transform 0.5s;
+.name-cont{
+    padding:3% 1%;
 }
 
-.buzzer:active {
-    transform: scale(0.9); 
-}
-
-
-input, button {
-    margin: 10px 0;
-    padding: 10px;
+.name-cont input{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 2%;
+    margin: 2% 5%;
+    font-size: large;
     border: none;
-    border-radius: 5px;
 }
 
-input {
-    width: 80%;
-    background-color: #444;
-    color: #fff;
+.name-cont button{
+    padding: 2%;
+    font-size: large;
+    background-color: rgb(64, 0, 123);
+    cursor:pointer;
+    color:white;
+    border: none;
+    border-radius: 5%;
 }
 
-button {
-    background-color: #6a0dad;
-    color: #fff;
-    cursor:grab;
+button:hover{
+    background-color: rgb(83, 12, 150);
+    transform: scale(1.09);
 }
 
-
-.buzzer-event {
-    margin-bottom: 10px;
-    font-style: italic;
-    color: #d43886; 
+.room-cont input{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 2%;
+    margin: 2% 5%;
+    font-size: large;
 }
 
-button:hover, .buzzer:hover {
-    opacity: 0.8;
+.room-cont button{
+    padding: 2%;
+    font-size: large;
+    background-color: rgb(64, 0, 123);
+    cursor:pointer;
+    color:white;
+    border: none;
+    border-radius: 5%;
 }
+
+.divider {
+    border: 0;
+    height: 3px;
+    background: #e39292;
+  }

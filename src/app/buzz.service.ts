@@ -53,6 +53,11 @@ export class BuzzService {
       alert(message);
       window.location.href = '/buzz';
     });
+
+    this.socket.on('currentState', (state: { users: { id: string; name: string; isHost: boolean }[], buzzerEvents: any[] }) => {
+      this.usersSubject.next(state.users);
+      this.buzzerEventsSubject.next(state.buzzerEvents);
+    });
   }
 
   public sendMessage(message: string): void {

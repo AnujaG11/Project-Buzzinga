@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './buzz.component.html',
   styleUrls: ['./buzz.component.css']
 })
+
 export class BuzzComponent implements OnInit, OnDestroy {
   newMessage = '';
   messageList: string[] = [];
@@ -17,6 +18,8 @@ export class BuzzComponent implements OnInit, OnDestroy {
   roomId = '';
   joinRoomId = ''; // For joining a room
   notifications: string[] = [];
+  showWelcomeModal: boolean = false;
+
 
   private subscriptions: Subscription[] = [];
 
@@ -100,6 +103,12 @@ export class BuzzComponent implements OnInit, OnDestroy {
   setName() {
     if (this.userName.trim()) {
       this.buzzService.setName(this.userName);
+      this.showWelcomeModal = true;
+      setTimeout(() => {
+        this.showWelcomeModal = false;
+      }, 1000);
+    }else if(this.newMessage.trim()==''){
+      alert('Username cannot be set to empty!');
     }
   }
 

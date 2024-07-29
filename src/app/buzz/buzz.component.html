@@ -1,5 +1,32 @@
 <div class="container">
-  <!-- <div class="sidebar left">
+  <div class="main">
+    <div class="header">
+      <h2>BUZZINGA</h2>
+      <div class="buzzer-container">
+        <img src="assets/buzzer.png" alt="Buzzer image" class="buzzer"/>
+      </div>
+    </div>
+   
+  <div class="name-cont">
+    <!-- <h3>Set Your Name</h3> -->
+    <input [(ngModel)]="userName" placeholder="Enter your name" />
+    <button (click)="setName()">Set My Name</button>
+  </div>
+  <app-welcome-modal *ngIf="showWelcomeModal" [userName]="userName"></app-welcome-modal>
+  <br/> <hr class="divider">
+    <h2>LET'S PLAY !</h2>
+    <div class="room-cont">
+      <input [(ngModel)]="joinRoomId" placeholder="Enter Room ID to Join" />
+      <button (click)="joinRoom()">Join Room</button>
+      <br/><br/>
+      <button (click)="createRoom('single')">Create Room (Single Buzz)</button>
+      <br> <br>
+      <button (click)="createRoom('multiple')">Create Room (Multiple Buzzes)</button>
+      <br>
+    </div>
+  </div>
+</div>
+ <!-- <div class="sidebar left">
     <h3>Live Users</h3>
     <ul>
       <li *ngFor="let user of users">
@@ -9,30 +36,7 @@
     </ul>
   </div> -->
 
-  <div class="main">
-    <h2>Buzz Me</h2>
-    <div class="buzzer-container">
-      <img src="assets/buzzer.png" alt="Buzzer" class="buzzer" (click)="pressBuzzer()" />
-    </div>
-
-    <h3>Set Your Name</h3>
-    <input [(ngModel)]="userName" placeholder="Enter your name" />
-    <button (click)="setName()">Set Name</button>
-
-    <br>
-    <h3>Room Management</h3>
-    <div>
-      <button (click)="createRoom('single')">Create Room (Single Buzz)</button>
-      <br> <br>
-      <button (click)="createRoom('multiple')">Create Room (Multiple Buzzes)</button>
-      <br>
-      <span *ngIf="roomId">Room ID: {{ roomId }}</span>
-      <br>
-      <input [(ngModel)]="joinRoomId" placeholder="Enter Room ID to Join" />
-      <button (click)="joinRoom()">Join Room</button>
-    </div>
-
-  <!-- <div class="sidebar right">
+    <!-- <div class="sidebar right">
     <h3>Buzzer Events</h3>
     <ul>
       <li *ngFor="let event of buzzerEvents" class="buzzer-event">
@@ -40,4 +44,3 @@
       </li>
     </ul>
   </div> -->
-</div>
