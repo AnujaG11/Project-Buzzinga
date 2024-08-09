@@ -121,9 +121,38 @@ button:hover, .buzzer:hover {
 } */
 
 .invite{
-  color:black;
+  height: 200px;
+  width: 500px;
+  margin:auto;
+  margin-top: 10%;
+  border-radius: 5px;  
+  span{
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 12%;
+    font-size: 20px;
+  }
+
+  i{
+    font-size: 40px;
+  }
 }
 
+
+.invite h2{
+  color: #464676;
+}
+
+.invite ul{
+  list-style: none;
+}
+
+.invite li{
+  padding: 2%;
+}
+
+.invite-list{
+  background-color: #c5c5ff;
+}
 
 .fa-solid .fa-copy .copy-icon{
   margin: 2px;

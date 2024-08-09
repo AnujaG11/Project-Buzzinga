@@ -1,7 +1,7 @@
 /* .welcome-page styles */
 .welcome-page {
     text-align: center;
-    padding: 50px;
+    padding: 20px;
     animation: fadeIn 2s;
     background-color: #230538; /* Dark purple background for the entire page */
     color: white; /* Ensure text color contrasts well with the dark background */
@@ -14,9 +14,9 @@
   
   /* App name image styles */
   .app-name-image {
-    width: 60vw; /* 60% of viewport width */
+    width: 50vw; /* 60% of viewport width */
     height: auto; /* Maintain aspect ratio */
-    max-height: 30vh; /* Limit height to avoid overflow */
+    max-height: 30vh;  
     margin-bottom: 30px;
     animation: appNameAnimation 2s infinite; /* Apply animation */
   }
