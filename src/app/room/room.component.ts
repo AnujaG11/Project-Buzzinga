@@ -61,9 +61,6 @@ export class RoomComponent implements OnInit {
           audio.pause();
           audio.currentTime = 0;
         }, 3000);
-      
-   
-    
   }
 
 
@@ -84,7 +81,6 @@ export class RoomComponent implements OnInit {
 
   leaveRoom() {
     const currentUser = this.users.find(user => user.id === this.buzzService.socket.id);
-
     if (currentUser?.isHost) {
       alert(`${currentUser.name}, you are the host. You cannot leave the room without closing it.`);
       if (confirm("Do you want to close the room?")) {
@@ -94,7 +90,6 @@ export class RoomComponent implements OnInit {
     } else {
       if (confirm("Do you really want to leave the room?")) {
         this.router.navigate(['buzz']);
-
         this.buzzService.leaveRoom().then(() => {
           this.router.navigate(['buzz']);
         })

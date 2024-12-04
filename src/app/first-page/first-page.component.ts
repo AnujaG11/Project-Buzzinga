@@ -7,9 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./first-page.component.css']
 })
 export class FirstPageComponent {
+  audioPath = 'assets/Addict (Instrumental).mp3';
   constructor(private router: Router) {}
+  
 
   navigateToApp() {
     this.router.navigate(['/buzz']);
+    const audio = new Audio(this.audioPath);
+    audio.play();
+    audio.loop = true; 
+    setTimeout(() => {
+         audio.pause();
+         audio.currentTime = 0;
+       }, 10000);
   }
 }

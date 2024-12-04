@@ -20,7 +20,7 @@
 
     <div class="invite">
       <h2>Invite Your Friends!!</h2>
-      <ul *ngFor="let user of users">
+      <ul *ngFor="let user of users" class="invite-list">
         <li *ngIf="user.isHost">
           <span >Room ID: {{ roomId }}</span>
           <i class="fa-solid fa-copy copy-icon" (click)="copyRoomId()"></i>

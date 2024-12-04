@@ -17,4 +17,23 @@
     text-align: center;
     color:rgb(63, 7, 116);
   }
+
+  button{
+    padding: 3%;
+    font-size: large;
+    background-color: rgb(64, 0, 123);
+    cursor:pointer;
+    color:white;
+    border: none;
+    margin: 5%  15%;
+  }
+
+  button:hover{
+    background-color: rgb(83, 12, 150);
+    transform: scale(1.09);
+  }
   
+#cancel-btn{
+     background-color: red;
+     color: black;
+}

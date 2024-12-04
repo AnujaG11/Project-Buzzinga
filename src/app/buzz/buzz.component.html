@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="main">
     <div class="header">
       <h2>BUZZINGA</h2>
@@ -7,9 +7,9 @@
       </div>
     </div>
    
-  <div class="name-cont">
+  <div class="name-cont"> -->
     <!-- <h3>Set Your Name</h3> -->
-    <input [(ngModel)]="userName" placeholder="Enter your name" />
+    <!-- <input [(ngModel)]="userName" placeholder="Enter your name" />
     <button (click)="setName()">Set My Name</button>
   </div>
   <app-welcome-modal *ngIf="showWelcomeModal" [userName]="userName"></app-welcome-modal>
@@ -18,14 +18,15 @@
     <div class="room-cont">
       <input [(ngModel)]="joinRoomId" placeholder="Enter Room ID to Join" />
       <button (click)="joinRoom()">Join Room</button>
-      <br/><br/>
-      <button (click)="createRoom('single')">Create Room (Single Buzz)</button>
+      <br/><br/> -->
+      <!-- <button>Create room</button> -->
+      <!-- <button (click)="createRoom('single')">Create Room (Single Buzz)</button>
       <br> <br>
       <button (click)="createRoom('multiple')">Create Room (Multiple Buzzes)</button>
-      <br>
-    </div>
+      <br> -->
+    <!-- </div>
   </div>
-</div>
+</div> -->
  <!-- <div class="sidebar left">
     <h3>Live Users</h3>
     <ul>
@@ -44,3 +45,32 @@
       </li>
     </ul>
   </div> -->
+
+
+  <div class="container">
+    <div class="main">
+      <div class="header">
+        <h2>BUZZINGA</h2>
+        <div class="buzzer-container">
+          <img src="assets/buzzer.png" alt="Buzzer image" class="buzzer"/>
+        </div>
+      </div>
+     
+      <div class="name-cont">
+        <input [(ngModel)]="userName" placeholder="Enter your name" />
+        <button (click)="setName()">Set My Name</button>
+      </div>
+      <app-welcome-modal *ngIf="showWelcomeModal" [userName]="userName" [modalType]="'welcome'"></app-welcome-modal>
+      <br/> 
+      <hr class="divider">
+      <h2>LET'S PLAY !</h2>
+      <div class="room-cont">
+        <input [(ngModel)]="joinRoomId" placeholder="Enter Room ID to Join" />
+        <button (click)="joinRoom()">Join Room</button>
+        <br/><br/>
+        <button (click)="showRoomSelectionModal()">Create Room</button>
+      </div>
+    </div>
+  </div>
+  <app-welcome-modal *ngIf="showRoomSelectionModalFlag" [modalType]="'roomSelection'" (roomTypeSelected)="createRoom($event)"></app-welcome-modal>
+  
